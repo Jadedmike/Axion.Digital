@@ -1,0 +1,188 @@
+{
+  "HomePage": {
+    "hero": {
+      "brand": "Axion Digital",
+      "title": "Build. Automate. Scale.",
+      "subtitle": "We design websites, AI systems, and automation solutions that grow your business.",
+      "getStarted": "Get Started",
+      "viewServices": "View Services"
+    },
+    "services": {
+      "title": "Our Services",
+      "subtitle": "Everything you need to run your digital agency",
+      "websites": {
+        "title": "Websites",
+        "description": "High-performance, modern web applications designed to convert."
+      },
+      "chatbots": {
+        "title": "AI Chatbots",
+        "description": "Intelligent customer service agents available 24/7."
+      },
+      "automation": {
+        "title": "Automation Systems",
+        "description": "Streamline your business processes with custom workflows."
+      }
+    },
+    "pricing": {
+      "title": "Pricing Plans",
+      "subtitle": "Choose the right package for your business",
+      "mostPopular": "Most Popular",
+      "getStarted": "Get Started",
+      "starter": {
+        "title": "Starter",
+        "description": "Perfect for small businesses getting started online.",
+        "features": ["5 Page Website", "Contact Form", "Mobile Responsive", "Basic SEO", "1 Month Support"]
+      },
+      "growth": {
+        "title": "Growth",
+        "description": "Ideal for growing companies needing automation.",
+        "features": ["10 Page Website", "Basic AI Chatbot", "Lead Generation System", "Advanced SEO", "3 Months Support"]
+      },
+      "business": {
+        "title": "Business System",
+        "description": "Complete digital operating system for established businesses.",
+        "features": ["Custom Web Application", "Advanced AI Agent", "Full Business Automation", "Custom Integrations", "24/7 Priority Support"]
+      }
+    },
+    "portfolio": {
+      "title": "Our Portfolio",
+      "subtitle": "Check out our latest projects",
+      "projects": [
+        { "title": "E-Commerce AI Agent", "category": "AI System" },
+        { "title": "Real Estate Platform", "category": "Web Development" },
+        { "title": "CRM Automation", "category": "Automation" },
+        { "title": "Healthcare Booking", "category": "Web Development" }
+      ]
+    },
+    "cta": {
+      "title": "Let's build your digital system",
+      "button": "Contact Us"
+    },
+    "contact": {
+      "title": "Start Your Project",
+      "subtitle": "Tell us about your business goals and we will build the system you need.",
+      "successTitle": "Request Received",
+      "successMessage": "We will get back to you within 24 hours.",
+      "submitAnother": "Submit another request",
+      "name": "Name",
+      "email": "Email",
+      "service": "Service Needed",
+      "budget": "Estimated Budget",
+      "details": "Project Details",
+      "submit": "Submit Request",
+      "submitting": "Submitting...",
+      "error": "Something went wrong. Please try again.",
+      "services": {
+        "websites": "Websites",
+        "chatbots": "AI Chatbots",
+        "automation": "Automation Systems",
+        "other": "Other"
+      },
+      "budgets": {
+        "under_1k": "Under $1,000",
+        "1k_5k": "$1,000 - $5,000",
+        "5k_10k": "$5,000 - $10,000",
+        "10k_plus": "$10,000+"
+      }
+    }
+  },
+  "ServicePages": {
+    "websites": {
+      "heroTitle": "Custom Websites Built for Growth",
+      "categoriesTitle": "Our Website Categories",
+      "categories": [
+        "Business websites",
+        "E-commerce",
+        "Landing pages",
+        "Corporate websites"
+      ],
+      "featuresTitle": "Why Choose Our Websites",
+      "features": [
+        "Responsive design",
+        "SEO-ready",
+        "Fast performance",
+        "Premium UI/UX"
+      ],
+      "processTitle": "Our Process",
+      "process": [
+        "Discovery",
+        "Design",
+        "Development",
+        "Launch"
+      ],
+      "ctaTitle": "Ready to build your digital presence?",
+      "ctaButton": "Request Your Website"
+    },
+    "aiChatbots": {
+      "heroTitle": "AI Chatbots That Work 24/7",
+      "typesTitle": "Types of Chatbots We Build",
+      "types": [
+        "Customer support bots",
+        "WhatsApp bots",
+        "Booking bots",
+        "Sales bots"
+      ],
+      "benefitsTitle": "Benefits for Your Business",
+      "benefits": [
+        "Faster replies",
+        "Automation",
+        "Lead generation"
+      ],
+      "ctaTitle": "Ready to automate your support?",
+      "ctaButton": "Build Your AI Chatbot"
+    },
+    "automation": {
+      "heroTitle": "Smart Automation Systems for Modern Businesses",
+      "useCasesTitle": "Common Use Cases",
+      "useCases": [
+        "Booking automation",
+        "CRM automation",
+        "Lead workflows",
+        "Notifications"
+      ],
+      "benefitsTitle": "Business Efficiency Benefits",
+      "benefits": [
+        "Save 20+ hours per week",
+        "Eliminate manual data entry",
+        "Reduce human error",
+        "Scale operations easily"
+      ],
+      "ctaTitle": "Ready to streamline your operations?",
+      "ctaButton": "Automate Your Business"
+    }
+  },
+  "PlanPages": {
+    "starter": {
+      "heroTitle": "Starter Plan",
+      "heroSubtitle": "Perfect for small businesses getting started online.",
+      "idealFor": "Ideal for beginners looking to establish a professional digital footprint without massive overhead.",
+      "includedTitle": "What's Included",
+      "ctaTitle": "Start your journey today",
+      "ctaButton": "Get Started with Starter"
+    },
+    "growth": {
+      "heroTitle": "Growth Plan",
+      "heroSubtitle": "Ideal for growing companies needing automation.",
+      "idealFor": "Designed for businesses ready to scale with intelligent chatbots and lead generation systems.",
+      "includedTitle": "Growth-focused Benefits",
+      "ctaTitle": "Ready to accelerate your growth?",
+      "ctaButton": "Get Started with Growth"
+    },
+    "business": {
+      "heroTitle": "Business System Plan",
+      "heroSubtitle": "Complete digital operating system for established businesses.",
+      "idealFor": "The ultimate enterprise/business ecosystem that integrates website, AI, and comprehensive automation.",
+      "includedTitle": "Full Ecosystem Benefits",
+      "ctaTitle": "Upgrade to a complete digital system",
+      "ctaButton": "Get Started with Business"
+    }
+  },
+  "Navigation": {
+    "home": "Home",
+    "services": "Services",
+    "pricing": "Pricing",
+    "about": "About",
+    "contact": "Contact",
+    "admin": "Admin Dashboard"
+  }
+}

@@ -1,7 +1,7 @@
-import {NextIntlClientProvider} from 'next-intl';
-import {getMessages} from 'next-intl/server';
-import {notFound} from 'next/navigation';
-import {routing} from '@/i18n/routing';
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
+import { notFound } from 'next/navigation';
+import { routing } from '@/i18n/routing';
 import '../globals.css';
 import { Inter, Cairo } from 'next/font/google';
 import clsx from 'clsx';
@@ -21,7 +21,7 @@ export default async function LocaleLayout({
   params
 }: {
   children: React.ReactNode;
-  params: Promise<{locale: string}>;
+  params: Promise<{ locale: string }>;
 }) {
   const resolvedParams = await params;
   const { locale } = resolvedParams;
@@ -49,3 +49,4 @@ export default async function LocaleLayout({
     </html>
   );
 }
+<meta name="google-site-verification" content="1cp0CAmsbXNPjaOSkFv7Y3dXWHZ8jh3QA0YbLKozeMs" />

@@ -7,13 +7,17 @@ import { Inter, Cairo } from 'next/font/google';
 import clsx from 'clsx';
 import { ThemeProvider } from '@/components/theme-provider';
 import { AdminFloatingButton } from '@/components/admin-floating-button';
+import type { Metadata } from 'next';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const cairo = Cairo({ subsets: ['arabic'], variable: '--font-cairo' });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Axion Digital - Build. Automate. Scale.',
   description: 'We design websites, AI systems, and automation solutions that grow your business.',
+  verification: {
+    google: '1cp0CAmsbXNPjaOSkFv7Y3dXWHZ8jh3QA0YbLKozeMs',
+  },
 };
 
 export default async function LocaleLayout({
@@ -49,4 +53,3 @@ export default async function LocaleLayout({
     </html>
   );
 }
-<meta name="google-site-verification" content="1cp0CAmsbXNPjaOSkFv7Y3dXWHZ8jh3QA0YbLKozeMs" />

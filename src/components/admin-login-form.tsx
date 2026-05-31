@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, Link } from '@/i18n/routing';
 import { motion } from 'framer-motion';
 import { Eye, EyeOff, Lock, AlertCircle, Loader2 } from 'lucide-react';
 
@@ -140,12 +140,12 @@ export function AdminLoginForm() {
 
         {/* Footer/Help Link */}
         <div className="text-center mt-6">
-          <a
+          <Link
             href="/"
             className="text-xs font-semibold text-brand-500 hover:underline transition-all"
           >
             ← Return to Homepage
-          </a>
+          </Link>
         </div>
       </motion.div>
     </div>

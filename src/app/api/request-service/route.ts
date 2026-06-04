@@ -3,6 +3,20 @@ import { createClient } from '@/utils/supabase/server';
 import { sendLeadNotificationEmail } from '@/lib/email';
 import { isSupabaseConfigured, saveLocalLead } from '@/lib/leads-store';
 
+// دالة مساعدة لإضافة ترويسات CORS على الاستجابة
+function addCorsHeaders(response: NextResponse) {
+  response.headers.set('Access-Control-Allow-Origin', '*'); // يمكنك استبدال * بنطاق موقعك لاحقاً للأمان
+  response.headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  response.headers.set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  return response;
+}
+
+// معالجة طلبات OPTIONS الخاصة بالـ CORS Preflight
+export async function OPTIONS() {
+  const response = new NextResponse(null, { status: 204 });
+  return addCorsHeaders(response);
+}
+
 export async function POST(request: Request) {
   try {
     const body = await request.json();
@@ -10,14 +24,15 @@ export async function POST(request: Request) {
 
     // Validate input
     if (!name || !email || !details || !service_type) {
-      return NextResponse.json(
+      const errorResponse = NextResponse.json(
         { error: 'Name, email, details, and service_type are required' },
         { status: 400 }
       );
+      return addCorsHeaders(errorResponse);
     }
 
-    const message = budget 
-      ? `Budget: ${budget}\n\nDetails: ${details}` 
+    const message = budget
+      ? `Budget: ${budget}\n\nDetails: ${details}`
       : details;
 
     let data;
@@ -40,10 +55,11 @@ export async function POST(request: Request) {
 
       if (error) {
         console.error('Supabase error:', error);
-        return NextResponse.json(
-          { error: 'Failed to submit service request' },
+        const errorResponse = NextResponse.json(
+          { error: 'Failed to submit service request', details: error.message },
           { status: 500 }
         );
+        return addCorsHeaders(errorResponse);
       }
       data = insertData;
     } else {
@@ -70,18 +86,15 @@ export async function POST(request: Request) {
       console.error('Email notification failed to send:', emailErr);
     }
 
-    return NextResponse.json({ success: true, data }, { status: 201 });
+    const successResponse = NextResponse.json({ success: true, data }, { status: 201 });
+    return addCorsHeaders(successResponse);
 
-  } catch (error) {
+  } catch (error: any) {
     console.error('API error:', error);
-    return NextResponse.json(
-      { error: 'Internal server error' },
+    const errorResponse = NextResponse.json(
+      { error: 'Internal server error', details: error?.message || error },
       { status: 500 }
     );
+    return addCorsHeaders(errorResponse);
   }
 }
-
-
-
-
-

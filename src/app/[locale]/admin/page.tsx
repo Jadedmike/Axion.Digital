@@ -34,12 +34,13 @@ export default function AdminDashboard() {
   const [error, setError] = useState<string | null>(null);
   const [selectedLead, setSelectedLead] = useState<Lead | null>(null);
 
+  // 🛠️ تم تعديل المسار هنا إلى /api/leads لجلب البيانات بشكل صحيح
   const fetchLeads = useCallback(async (showLoading = false) => {
     try {
       if (showLoading) {
         setIsLoading(true);
       }
-      const response = await fetch('/api/admin/leads');
+      const response = await fetch('/api/leads');
       if (!response.ok) {
         throw new Error('Failed to fetch leads');
       }
@@ -59,9 +60,10 @@ export default function AdminDashboard() {
     fetchLeads(false);
   }, [fetchLeads]);
 
+  // 🛠️ تم تعديل المسار هنا لتحديث حالة الطلب في المكان الصحيح
   const handleUpdateStatus = async (id: string, newStatus: 'new' | 'in_progress' | 'completed') => {
     try {
-      const response = await fetch('/api/admin/leads', {
+      const response = await fetch('/api/leads', {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ id, status: newStatus }),
@@ -79,12 +81,13 @@ export default function AdminDashboard() {
     }
   };
 
+  // 🛠️ تم تعديل المسار هنا لحذف الطلب من المكان الصحيح
   const handleDeleteLead = async (id: string) => {
     if (!confirm('Are you sure you want to delete this lead? This action cannot be undone.')) {
       return;
     }
     try {
-      const response = await fetch(`/api/admin/leads?id=${id}`, {
+      const response = await fetch(`/api/leads?id=${id}`, {
         method: 'DELETE',
       });
       if (!response.ok) {
@@ -100,13 +103,13 @@ export default function AdminDashboard() {
 
   const getStatusBadge = (status: string) => {
     switch (status) {
-      case 'new': 
+      case 'new':
         return <span className="px-2.5 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400">New</span>;
-      case 'in_progress': 
+      case 'in_progress':
         return <span className="px-2.5 py-1 text-xs font-semibold rounded-full bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400">In Progress</span>;
-      case 'completed': 
+      case 'completed':
         return <span className="px-2.5 py-1 text-xs font-semibold rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400">Completed</span>;
-      default: 
+      default:
         return null;
     }
   };
@@ -142,8 +145,8 @@ export default function AdminDashboard() {
       <div className="flex items-center justify-between space-y-2">
         <h2 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Dashboard</h2>
         <div className="flex items-center gap-3">
-          <button 
-            onClick={() => fetchLeads(true)} 
+          <button
+            onClick={() => fetchLeads(true)}
             disabled={isLoading}
             className="p-2 border border-slate-300 rounded-md hover:bg-slate-50 dark:bg-slate-800 dark:text-slate-200 dark:border-slate-700 dark:hover:bg-slate-700 disabled:opacity-50"
           >
@@ -160,7 +163,7 @@ export default function AdminDashboard() {
           </button>
         </div>
       </div>
-      
+
       {/* Connection Error Banner */}
       {error && (
         <div className="flex items-center gap-3 mt-6 p-4 text-sm rounded-xl border border-red-200 bg-red-50 text-red-800 dark:border-red-900/30 dark:bg-red-950/20 dark:text-red-400">
@@ -172,7 +175,7 @@ export default function AdminDashboard() {
       {/* Stats Grid */}
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 mt-6">
         {stats.map((stat, i) => (
-          <motion.div 
+          <motion.div
             key={i}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -193,7 +196,7 @@ export default function AdminDashboard() {
 
       {/* Leads Table or Empty State */}
       <div className="grid gap-4 grid-cols-1 mt-6">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
@@ -247,7 +250,7 @@ export default function AdminDashboard() {
                         {new Date(lead.created_at).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' })}
                       </td>
                       <td className="p-4 align-middle text-right space-x-2">
-                        <button 
+                        <button
                           onClick={() => setSelectedLead(lead)}
                           className="text-brand-600 hover:underline dark:text-brand-400 font-medium text-sm"
                         >
@@ -267,7 +270,7 @@ export default function AdminDashboard() {
       <AnimatePresence>
         {selectedLead && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/40 backdrop-blur-sm">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
@@ -279,7 +282,7 @@ export default function AdminDashboard() {
                   <h3 className="text-lg font-semibold text-slate-900 dark:text-white">Lead Details</h3>
                   <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Submitted via Website Form</p>
                 </div>
-                <button 
+                <button
                   onClick={() => setSelectedLead(null)}
                   className="rounded-lg p-1.5 text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
                 >
@@ -334,19 +337,19 @@ export default function AdminDashboard() {
                   <div className="flex flex-col gap-1.5">
                     <span className="text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider">Update Status</span>
                     <div className="flex gap-1.5">
-                      <button 
+                      <button
                         onClick={() => handleUpdateStatus(selectedLead.id, 'new')}
                         className={`px-3 py-1 text-xs font-semibold rounded-md border transition-all ${selectedLead.status === 'new' ? 'bg-blue-500 border-blue-500 text-white shadow-sm' : 'border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300'}`}
                       >
                         New
                       </button>
-                      <button 
+                      <button
                         onClick={() => handleUpdateStatus(selectedLead.id, 'in_progress')}
                         className={`px-3 py-1 text-xs font-semibold rounded-md border transition-all ${selectedLead.status === 'in_progress' ? 'bg-amber-500 border-amber-500 text-white shadow-sm' : 'border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300'}`}
                       >
                         In Progress
                       </button>
-                      <button 
+                      <button
                         onClick={() => handleUpdateStatus(selectedLead.id, 'completed')}
                         className={`px-3 py-1 text-xs font-semibold rounded-md border transition-all ${selectedLead.status === 'completed' ? 'bg-emerald-500 border-emerald-500 text-white shadow-sm' : 'border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300'}`}
                       >
@@ -354,8 +357,8 @@ export default function AdminDashboard() {
                       </button>
                     </div>
                   </div>
-                  
-                  <button 
+
+                  <button
                     onClick={() => handleDeleteLead(selectedLead.id)}
                     className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-red-200 text-red-600 hover:bg-red-50 dark:border-red-900/30 dark:text-red-400 dark:hover:bg-red-950/20 text-xs font-semibold mt-auto"
                   >
@@ -371,4 +374,3 @@ export default function AdminDashboard() {
     </>
   );
 }
-

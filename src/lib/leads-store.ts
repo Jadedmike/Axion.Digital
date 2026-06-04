@@ -48,16 +48,21 @@ export async function getLocalLeads(): Promise<Lead[]> {
 }
 
 export async function saveLocalLead(lead: Omit<Lead, 'id' | 'created_at' | 'status'>): Promise<Lead> {
-  // نقوم فقط بطباعة البيانات في السجلات بدلاً من حفظها في ملف JSON
+  // نقوم بطباعة البيانات في السجلات
   console.log('📬 [Local Fallback] New Lead Received:', lead);
 
-  // نرجع كائن وهمي يحتوي على البيانات مع معرف زمني كبديل مؤقت
-  return {
+  // ونقوم بحفظها في ملف JSON لتعرض في لوحة التحكم (Admin Dashboard)
+  ensureLeadsFile();
+  const leads = await getLocalLeads();
+  const newLead: Lead = {
     ...lead,
     id: Date.now().toString(),
     status: 'new',
     created_at: new Date().toISOString()
   };
+  leads.unshift(newLead);
+  fs.writeFileSync(leadsFilePath, JSON.stringify(leads, null, 2), 'utf8');
+  return newLead;
 }
 
 export async function updateLocalLeadStatus(id: string, status: 'new' | 'in_progress' | 'completed'): Promise<Lead | null> {

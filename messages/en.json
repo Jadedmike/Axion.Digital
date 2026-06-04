@@ -2,56 +2,106 @@
   "HomePage": {
     "hero": {
       "brand": "Axion Digital",
-      "title": "Build. Automate. Scale.",
-      "subtitle": "We design websites, AI systems, and automation solutions that grow your business.",
-      "getStarted": "Get Started",
+      "title": "Transform Manual Work Into Scalable Operations",
+      "subtitle": "We design custom software, AI agents, and workflows that automate operations, save hundreds of hours, and accelerate revenue growth.",
+      "getStarted": "Start Automating Your Business",
       "viewServices": "View Services"
     },
+    "painPoints": {
+      "title": "Are Daily Manual Tasks Eating Your Time and Profits?",
+      "subtitle": "If your team is drowning in repetitive daily chores, your business isn't scaling at full potential:",
+      "points": [
+        "Wasting valuable hours daily on repetitive questions, manual data entry, and reports.",
+        "Losing qualified, hot leads due to slow response times or lack of 24/7 follow-up.",
+        "Operations and client data scattered across disconnected apps, causing delay and errors.",
+        "Inability to scale or take on more customers because you are stuck in day-to-day operations."
+      ]
+    },
     "services": {
-      "title": "Our Services",
-      "subtitle": "Everything you need to run your digital agency",
+      "title": "Our Services Built for Growth",
+      "subtitle": "Everything you need to move from manual chaos to absolute digital efficiency",
       "websites": {
-        "title": "Websites",
-        "description": "High-performance, modern web applications designed to convert."
+        "title": "High-Converting Smart Storefronts",
+        "description": "We don't just build pretty pages; we design high-converting, lightning-fast web applications optimized to turn casual visitors into paying customers."
       },
       "chatbots": {
-        "title": "AI Chatbots",
-        "description": "Intelligent customer service agents available 24/7."
+        "title": "24/7 Smart AI Agents & Assistants",
+        "description": "Intelligent digital employees working around the clock. They instantly answer customer queries, qualify leads, and schedule appointments autonomously."
       },
       "automation": {
-        "title": "Automation Systems",
-        "description": "Streamline your business processes with custom workflows."
+        "title": "Workflow Automation & CRM",
+        "description": "Say goodbye to manual data entry. We integrate your apps, syncing data automatically so no lead is ever lost and everything runs smoothly."
       }
+    },
+    "howItWorks": {
+      "title": "Your Path to Efficiency in 3 Simple Steps",
+      "subtitle": "How we guide you from operational friction to seamless automation",
+      "steps": [
+        {
+          "title": "1. 15-Min Discovery Call",
+          "description": "We analyze your operations to pinpoint where you are losing time and money, mapping out quick automation wins."
+        },
+        {
+          "title": "2. Custom System Engineering",
+          "description": "We design and build workflows and software tailored to your specific business needs, handling all the tech details."
+        },
+        {
+          "title": "3. Launch & Run On Autopilot",
+          "description": "We deploy your new automated systems and monitor them 24/7. Watch your operations run smoothly while saving time and cost."
+        }
+      ]
     },
     "pricing": {
       "title": "Pricing Plans",
-      "subtitle": "Choose the right package for your business",
+      "subtitle": "Choose the right package to scale your business",
       "mostPopular": "Most Popular",
       "getStarted": "Get Started",
       "starter": {
         "title": "Starter",
+        "tagline": "Establish a professional digital presence that builds trust and wins your first customers.",
         "description": "Perfect for small businesses getting started online.",
+        "cta": "Build Your Digital Presence",
         "features": ["5 Page Website", "Contact Form", "Mobile Responsive", "Basic SEO", "1 Month Support"]
       },
       "growth": {
         "title": "Growth",
+        "tagline": "The best choice to save time, automate answers, and generate leads automatically to accelerate expansion.",
         "description": "Ideal for growing companies needing automation.",
+        "cta": "Launch Automated Growth",
         "features": ["10 Page Website", "Basic AI Chatbot", "Lead Generation System", "Advanced SEO", "3 Months Support"]
       },
       "business": {
         "title": "Business System",
+        "tagline": "Turn your entire company into a super-efficient digital ecosystem operating with full automation 24/7.",
         "description": "Complete digital operating system for established businesses.",
+        "cta": "Design Custom System",
         "features": ["Custom Web Application", "Advanced AI Agent", "Full Business Automation", "Custom Integrations", "24/7 Priority Support"]
       }
     },
     "portfolio": {
       "title": "Our Portfolio",
-      "subtitle": "Check out our latest projects",
+      "subtitle": "Check out our latest projects built for business impact",
       "projects": [
-        { "title": "E-Commerce AI Agent", "category": "AI System" },
-        { "title": "Real Estate Platform", "category": "Web Development" },
-        { "title": "CRM Automation", "category": "Automation" },
-        { "title": "Healthcare Booking", "category": "Web Development" }
+        {
+          "title": "Smart Content Creation Agent",
+          "category": "AI System",
+          "description": "A smart AI agent that automatically designs, writes, and schedules custom marketing content to increase engagement."
+        },
+        {
+          "title": "Premium Real Estate Platform",
+          "category": "Web Development",
+          "description": "An advanced estate marketplace with smart property filtering that speeds up transaction cycles by 40%."
+        },
+        {
+          "title": "Automated CRM Integration",
+          "category": "Automation",
+          "description": "Connecting customer interactions and pipeline management to move leads to closed deals automatically."
+        },
+        {
+          "title": "Healthcare Scheduling Engine",
+          "category": "Web Development",
+          "description": "Smart booking portal that reduced medical appointment no-shows by 50% using automated alerts."
+        }
       ]
     },
     "cta": {

@@ -12,22 +12,28 @@ export function Pricing() {
     {
       id: 'starter',
       name: t('starter.title'),
+      tagline: t('starter.tagline'),
       description: t('starter.description'),
       features: t.raw('starter.features') as string[],
+      cta: t('starter.cta'),
       popular: false,
     },
     {
       id: 'growth',
       name: t('growth.title'),
+      tagline: t('growth.tagline'),
       description: t('growth.description'),
       features: t.raw('growth.features') as string[],
+      cta: t('growth.cta'),
       popular: true,
     },
     {
       id: 'business-system',
       name: t('business.title'),
+      tagline: t('business.tagline'),
       description: t('business.description'),
       features: t.raw('business.features') as string[],
+      cta: t('business.cta'),
       popular: false,
     }
   ];
@@ -81,6 +87,15 @@ export function Pricing() {
                 <p className={`mt-2 text-sm ${plan.popular ? 'text-slate-300 dark:text-slate-600' : 'text-slate-600 dark:text-slate-400'}`}>
                   {plan.description}
                 </p>
+                {plan.tagline && (
+                  <p className={`mt-3 text-xs italic font-medium leading-relaxed border-s-2 ps-3 ${
+                    plan.popular 
+                      ? 'text-brand-300 border-brand-400 dark:text-slate-600 dark:border-slate-400' 
+                      : 'text-slate-500 border-brand-500 dark:text-slate-400'
+                  }`}>
+                    {plan.tagline}
+                  </p>
+                )}
               </div>
               <ul className={`flex-1 space-y-4 text-sm leading-6 ${plan.popular ? 'text-slate-300 dark:text-slate-600' : 'text-slate-600 dark:text-slate-400'}`}>
                 {plan.features.map((feature) => (
@@ -98,7 +113,7 @@ export function Pricing() {
                     : 'bg-brand-50 text-brand-600 hover:bg-brand-100 dark:bg-slate-800 dark:text-brand-400 dark:hover:bg-slate-700 ring-1 ring-inset ring-brand-200 dark:ring-slate-700'
                 }`}
               >
-                {t('getStarted')}
+                {plan.cta}
               </Link>
             </motion.div>
           ))}

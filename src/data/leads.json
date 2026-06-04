@@ -1,0 +1,29 @@
+[
+  {
+    "name": "gwad",
+    "email": "mhgwad161@gmail.com",
+    "message": "Budget: under_1k\n\nDetails: khdskfhksahf \n",
+    "service_type": "websites",
+    "id": "486e0524-4d92-4730-9c32-e32650832c1b",
+    "status": "new",
+    "created_at": "2026-06-04T11:57:53.282Z"
+  },
+  {
+    "name": "gwad",
+    "email": "mhgwad161@gmail.com",
+    "message": "Budget: under_1k\n\nDetails: gweadn n\n",
+    "service_type": "websites",
+    "id": "01be212b-7d7b-4146-8436-5b17355be145",
+    "status": "new",
+    "created_at": "2026-06-04T11:55:22.197Z"
+  },
+  {
+    "name": "Test Local Fallback",
+    "email": "test@example.com",
+    "message": "test details for fallback",
+    "service_type": "websites",
+    "id": "fe2745dc-e2dd-4b3a-81d9-d28ad00279f4",
+    "status": "new",
+    "created_at": "2026-06-04T11:54:30.036Z"
+  }
+]

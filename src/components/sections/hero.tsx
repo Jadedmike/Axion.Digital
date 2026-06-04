@@ -30,9 +30,9 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="mt-8 text-5xl font-extrabold tracking-tight text-slate-800 dark:text-white sm:text-7xl lg:text-8xl"
+          className="mt-8 text-4xl font-extrabold tracking-tight text-slate-800 dark:text-white sm:text-6xl lg:text-7xl leading-tight"
         >
-          Build. <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-brand-600">Automate.</span> Scale.
+          {t('title')}
         </motion.h1>
 
         <motion.p

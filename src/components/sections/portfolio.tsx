@@ -5,31 +5,35 @@ import { motion } from 'framer-motion';
 
 export function Portfolio() {
   const t = useTranslations('HomePage.portfolio');
-  const projectsData = t.raw('projects') as { title: string, category: string }[];
+  const projectsData = t.raw('projects') as { title: string, category: string, description?: string }[];
 
   const projects = [
     {
       id: 1,
       title: projectsData[0].title,
       category: projectsData[0].category,
+      description: projectsData[0].description,
       color: 'bg-blue-500',
     },
     {
       id: 2,
       title: projectsData[1].title,
       category: projectsData[1].category,
+      description: projectsData[1].description,
       color: 'bg-indigo-500',
     },
     {
       id: 3,
       title: projectsData[2].title,
       category: projectsData[2].category,
+      description: projectsData[2].description,
       color: 'bg-purple-500',
     },
     {
       id: 4,
       title: projectsData[3].title,
       category: projectsData[3].category,
+      description: projectsData[3].description,
       color: 'bg-emerald-500',
     }
   ];
@@ -69,13 +73,18 @@ export function Portfolio() {
             >
               <div className={`absolute inset-0 opacity-20 transition-opacity group-hover:opacity-40 ${project.color}`} />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-4 transition-transform group-hover:translate-y-0">
+              <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-6 transition-transform duration-300 group-hover:translate-y-0">
                 <span className="inline-block px-3 py-1 mb-3 text-xs font-medium text-white bg-white/20 backdrop-blur-md rounded-full">
                   {project.category}
                 </span>
-                <h3 className="text-2xl font-bold text-white">
+                <h3 className="text-2xl font-bold text-white mb-2">
                   {project.title}
                 </h3>
+                {project.description && (
+                  <p className="text-sm text-slate-200 opacity-0 transition-opacity duration-300 group-hover:opacity-100 line-clamp-2">
+                    {project.description}
+                  </p>
+                )}
               </div>
             </motion.div>
           ))}

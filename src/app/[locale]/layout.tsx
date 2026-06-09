@@ -7,6 +7,8 @@ import { Inter, Cairo } from 'next/font/google';
 import clsx from 'clsx';
 import { ThemeProvider } from '@/components/theme-provider';
 import { AdminFloatingButton } from '@/components/admin-floating-button';
+import { Navbar } from '@/components/navbar';
+import { Footer } from '@/components/footer';
 import type { Metadata } from 'next';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
@@ -30,7 +32,7 @@ export default async function LocaleLayout({
   const resolvedParams = await params;
   const { locale } = resolvedParams;
 
-  if (!routing.locales.includes(locale as "en" | "ar")) {
+  if (!routing.locales.includes(locale as "en" | "ar" | "tr")) {
     notFound();
   }
 
@@ -45,7 +47,11 @@ export default async function LocaleLayout({
       )}>
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-            {children}
+            <div className="flex min-h-screen flex-col">
+              <Navbar />
+              {children}
+              <Footer />
+            </div>
             <AdminFloatingButton />
           </ThemeProvider>
         </NextIntlClientProvider>

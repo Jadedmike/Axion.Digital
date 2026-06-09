@@ -20,7 +20,7 @@ export async function OPTIONS() {
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, email, details, service_type, budget } = body;
+    const { name, email, details, service_type, budget, phone } = body;
 
     // Validate input
     if (!name || !email || !details || !service_type) {
@@ -31,9 +31,15 @@ export async function POST(request: Request) {
       return addCorsHeaders(errorResponse);
     }
 
-    const message = budget
-      ? `Budget: ${budget}\n\nDetails: ${details}`
-      : details;
+    const messageParts = [];
+    if (phone) {
+      messageParts.push(`Phone: ${phone}`);
+    }
+    if (budget) {
+      messageParts.push(`Budget: ${budget}`);
+    }
+    messageParts.push(`Details: ${details}`);
+    const message = messageParts.join('\n\n');
 
     let data;
 
@@ -80,7 +86,8 @@ export async function POST(request: Request) {
         email,
         service_type,
         message: details,
-        budget: budget || undefined
+        budget: budget || undefined,
+        phone: phone || undefined
       });
     } catch (emailErr) {
       console.error('Email notification failed to send:', emailErr);

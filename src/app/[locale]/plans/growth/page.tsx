@@ -31,7 +31,7 @@ export default function GrowthPlanPage() {
             &quot;{tPlan('idealFor')}&quot;
           </p>
           <Link
-            href="#contact"
+            href="?service=growth#contact"
             className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-600 px-8 py-3.5 text-sm font-semibold text-white shadow-sm hover:bg-brand-500 transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600"
           >
             {tPlan('ctaButton')}

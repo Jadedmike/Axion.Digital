@@ -6,6 +6,7 @@ export interface LeadEmailData {
   service_type: string;
   message: string;
   budget?: string;
+  phone?: string;
 }
 
 export async function sendLeadNotificationEmail(lead: LeadEmailData): Promise<{ success: boolean; error?: string }> {
@@ -170,6 +171,12 @@ export async function sendLeadNotificationEmail(lead: LeadEmailData): Promise<{ 
                   <div class="grid-item-label">Email Address</div>
                   <div class="grid-item-value"><a href="mailto:${lead.email}" style="color: #3b82f6; text-decoration: none;">${lead.email}</a></div>
                 </div>
+                ${lead.phone ? `
+                <div class="grid-item" style="grid-column: span 2;">
+                  <div class="grid-item-label">Phone Number</div>
+                  <div class="grid-item-value"><a href="tel:${lead.phone}" style="color: #3b82f6; text-decoration: none;">${lead.phone}</a></div>
+                </div>
+                ` : ''}
                 ${lead.budget ? `
                 <div class="grid-item" style="grid-column: span 2;">
                   <div class="grid-item-label">Estimated Budget</div>
@@ -196,7 +203,7 @@ export async function sendLeadNotificationEmail(lead: LeadEmailData): Promise<{ 
       from: `Dixon Digital Notifications <${user}>`,
       to,
       subject,
-      text: `New Request from ${lead.name} (${lead.service_type})\nEmail: ${lead.email}\nBudget: ${lead.budget || 'N/A'}\n\nMessage:\n${lead.message}`,
+      text: `New Request from ${lead.name} (${lead.service_type})\nEmail: ${lead.email}\nPhone: ${lead.phone || 'N/A'}\nBudget: ${lead.budget || 'N/A'}\n\nMessage:\n${lead.message}`,
       html: htmlContent,
     });
 

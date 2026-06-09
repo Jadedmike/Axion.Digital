@@ -1,0 +1,242 @@
+{
+  "HomePage": {
+    "hero": {
+      "brand": "Axion Digital",
+      "title": "Manuel İşleri Ölçeklenebilir Operasyonlara Dönüştürün",
+      "subtitle": "Operasyonları otomatikleştiren, yüzlerce saat tasarruf sağlayan ve gelir artışını hızlandıran özel yazılımlar, yapay zeka ajanları ve iş akışları tasarlıyoruz.",
+      "getStarted": "İşinizi Otomatikleştirmeye Başlayın",
+      "viewServices": "Hizmetleri Görüntüle"
+    },
+    "painPoints": {
+      "title": "Günlük Manuel İşler Zamanınızı ve Kârınızı mı Tüketiyor?",
+      "subtitle": "Ekibiniz tekrarlayan günlük işlerde boğuluyorsa, işletmeniz tam potansiyeliyle ölçeklenemiyordur:",
+      "points": [
+        "Tekrarlayan sorular, manuel veri girişi ve raporlar için her gün değerli saatler harcamak.",
+        "Yavaş yanıt süreleri veya 7/24 takip eksikliği nedeniyle nitelikli, sıcak potansiyel müşterileri kaybetmek.",
+        "Operasyonlar ve müşteri verilerinin bağlantısız uygulamalara dağılması, gecikmelere ve hatalara neden olması.",
+        "Günlük operasyonlarda sıkışıp kaldığınız için ölçeklenememek veya daha fazla müşteri alamamak."
+      ]
+    },
+    "services": {
+      "title": "Büyüme İçin Geliştirilen Hizmetlerimiz",
+      "subtitle": "Manuel karmaşadan mutlak dijital verimliliğe geçmek için ihtiyacınız olan her şey",
+      "websites": {
+        "title": "Yüksek Dönüşümlü Akıllı Web Siteleri",
+        "description": "Biz sadece güzel sayfalar oluşturmuyoruz; ziyaretçileri ödeyen müşterilere dönüştürmek için optimize edilmiş, ultra hızlı web uygulamaları tasarlıyoruz."
+      },
+      "chatbots": {
+        "title": "7/24 Akıllı Yapay Zeka Ajanları ve Asistanları",
+        "description": "Günün her saati çalışan akıllı dijital çalışanlar. Müşteri sorularını anında yanıtlar, potansiyel müşterileri değerlendirir ve randevuları otonom olarak planlarlar."
+      },
+      "automation": {
+        "title": "İş Akışı Otomasyonu ve CRM",
+        "description": "Manuel veri girişine veda edin. Uygulamalarınızı entegre ediyor, verileri otomatik olarak eşitliyoruz; böylece hiçbir müşteri adayı kaybolmaz ve her şey sorunsuz çalışır."
+      }
+    },
+    "howItWorks": {
+      "title": "3 Basit Adımda Verimliliğe Giden Yolunuz",
+      "subtitle": "Operasyonel sürtünmeden sorunsuz otomasyona nasıl geçeceğinizi gösteriyoruz",
+      "steps": [
+        {
+          "title": "1. 15 Dakikalık Keşif Görüşmesi",
+          "description": "Operasyonlarınızı analiz ederek zaman ve para kaybettiğiniz noktaları belirliyor, hızlı otomasyon kazanımları haritalandırıyoruz."
+        },
+        {
+          "title": "2. Özel Sistem Mühendisliği",
+          "description": "Tüm teknik detayları üstlenerek, özel iş ihtiyaçlarınıza göre tasarlanmış iş akışları ve yazılımlar oluşturuyoruz."
+        },
+        {
+          "title": "3. Otopilotta Yayında ve Çalışıyor",
+          "description": "Yeni otomasyon sistemlerinizi kuruyor ve 7/24 izliyoruz. Zaman ve maliyet tasarrufu sağlarken operasyonlarınızın sorunsuz çalışmasını izleyin."
+        }
+      ]
+    },
+    "pricing": {
+      "title": "Fiyatlandırma Planları",
+      "subtitle": "İşletmenizi ölçeklendirmek için doğru paketi seçin",
+      "mostPopular": "En Popüler",
+      "getStarted": "Başlayın",
+      "starter": {
+        "title": "Starter",
+        "tagline": "Güven inşa eden ve ilk müşterilerinizi kazandıran profesyonel bir dijital varlık oluşturun.",
+        "description": "İnternete yeni başlayan küçük işletmeler için mükemmel.",
+        "cta": "Dijital Varlığınızı Oluşturun",
+        "features": ["5 Sayfalık Web Sitesi", "İletişim Formu", "Mobil Uyumlu", "Temel SEO", "1 Ay Destek"]
+      },
+      "growth": {
+        "title": "Growth",
+        "tagline": "Zaman kazanmak, yanıtları otomatikleştirmek ve büyümeyi hızlandırmak için otomatik müşteri adayları oluşturmak adına en iyi seçim.",
+        "description": "Otomasyona ihtiyaç duyan büyüyen şirketler için ideal.",
+        "cta": "Otomatik Büyümeyi Başlatın",
+        "features": ["10 Sayfalık Web Sitesi", "Temel Yapay Zeka Sohbet Robotu", "Potansiyel Müşteri Üretim Sistemi", "Gelişmiş SEO", "3 Ay Destek"]
+      },
+      "business": {
+        "title": "Business System",
+        "tagline": "Tüm şirketinizi 7/24 tam otomasyonla çalışan süper verimli bir dijital ekosisteme dönüştürün.",
+        "description": "Köklü işletmeler için eksiksiz dijital işletim sistemi.",
+        "cta": "Özel Sistem Tasarla",
+        "features": ["Özel Web Uygulaması", "Gelişmiş Yapay Zeka Ajanı", "Tam İş Otomasyonu", "Özel Entegrasyonlar", "7/24 Öncelikli Destek"]
+      }
+    },
+    "portfolio": {
+      "title": "Portföyümüz",
+      "subtitle": "İş etkisi için tasarladığımız son projelerimize göz atın",
+      "projects": [
+        {
+          "title": "Akıllı İçerik Üretim Ajanı",
+          "category": "Yapay Zeka Sistemi",
+          "description": "Etkileşimi artırmak için özel pazarlama içeriklerini otomatik olarak tasarlayan, yazan ve planlayan akıllı bir yapay zeka ajanı."
+        },
+        {
+          "title": "Premium Gayrimenkul Platformu",
+          "category": "Web Geliştirme",
+          "description": "İşlem döngülerini %40 hızlandıran akıllı mülk filtrelemeli gelişmiş bir gayrimenkul pazaryeri."
+        },
+        {
+          "title": "Otomatik CRM Entegrasyonu",
+          "category": "Otomasyon",
+          "description": "Müşteri adaylarını otomatik olarak kazanılan anlaşmalara dönüştürmek için müşteri etkileşimlerini ve satış hattı yönetimini birbirine bağlama."
+        },
+        {
+          "title": "Sağlık Randevu Planlama Motoru",
+          "category": "Web Geliştirme",
+          "description": "Otomatik uyarılar kullanarak tıbbi randevulara gelmeme oranını %50 azaltan akıllı rezervasyon portalı."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Hadi dijital sisteminizi kuralım",
+      "button": "Bizimle İletişime Geçin"
+    },
+    "contact": {
+      "title": "Projenizi Başlatın",
+      "subtitle": "Bize iş hedeflerinizi anlatın, ihtiyacınız olan sistemi kuralım.",
+      "successTitle": "Talep Alındı",
+      "successMessage": "24 saat içinde size geri döneceğiz.",
+      "submitAnother": "Başka bir talep gönder",
+      "name": "İsim",
+      "email": "E-posta",
+      "phone": "Telefon Numarası",
+      "phonePlaceholder": "+90 (555) 000-0000",
+      "service": "Gerekli Hizmet",
+      "specifyService": "Hizmeti Belirtin",
+      "specifyServicePlaceholder": "Örn. Mobil Uygulama Geliştirme",
+      "budget": "Tahmini Bütçe",
+      "details": "Proje Detayları",
+      "submit": "Talebi Gönder",
+      "submitting": "Gönderiliyor...",
+      "error": "Bir şeyler yanlış gitti. Lütfen tekrar deneyin.",
+      "services": {
+        "websites": "Web Siteleri",
+        "chatbots": "Yapay Zeka Sohbet Robotları",
+        "automation": "Otomasyon Sistemleri",
+        "other": "Diğer"
+      },
+      "budgets": {
+        "under_1k": "1.000$ Altı",
+        "1k_5k": "1.000$ - 5.000$",
+        "5k_10k": "5.000$ - 10.000$",
+        "10k_plus": "10.000$ ve Üzeri"
+      }
+    }
+  },
+  "ServicePages": {
+    "websites": {
+      "heroTitle": "Büyüme İçin Geliştirilmiş Özel Web Siteleri",
+      "categoriesTitle": "Web Sitesi Kategorilerimiz",
+      "categories": [
+        "Kurumsal Web Siteleri",
+        "E-ticaret",
+        "Açılış Sayfaları (Landing Pages)",
+        "Şirket Web Siteleri"
+      ],
+      "featuresTitle": "Neden Web Sitelerimizi Seçmelisiniz?",
+      "features": [
+        "Duyarlı Tasarım",
+        "SEO Uyumlu",
+        "Hızlı Performans",
+        "Premium Kullanıcı Arayüzü / Deneyimi"
+      ],
+      "processTitle": "Sürecimiz",
+      "process": [
+        "Keşif",
+        "Tasarım",
+        "Geliştirme",
+        "Lansman"
+      ],
+      "ctaTitle": "Dijital varlığınızı oluşturmaya hazır mısınız?",
+      "ctaButton": "Web Sitenizi Talep Edin"
+    },
+    "aiChatbots": {
+      "heroTitle": "7/24 Çalışan Yapay Zeka Sohbet Robotları",
+      "typesTitle": "Geliştirdiğimiz Sohbet Robotu Türleri",
+      "types": [
+        "Müşteri Destek Botları",
+        "WhatsApp Botları",
+        "Rezervasyon Botları",
+        "Sales Botları"
+      ],
+      "benefitsTitle": "İşletmeniz İçin Faydaları",
+      "benefits": [
+        "Daha Hızlı Yanıtlar",
+        "Otomasyon",
+        "Lead generation"
+      ],
+      "ctaTitle": "Desteğinizi otomatikleştirmeye hazır mısınız?",
+      "ctaButton": "Yapay Zeka Sohbet Robotunuzu Kurun"
+    },
+    "automation": {
+      "heroTitle": "Modern İşletmeler İçin Akıllı Otomasyon Sistemleri",
+      "useCasesTitle": "Yaygın Kullanım Senaryoları",
+      "useCases": [
+        "Rezervasyon Otomasyonu",
+        "CRM Otomasyonu",
+        "Müşteri Adayı İş Akışları",
+        "Bildirimler"
+      ],
+      "benefitsTitle": "İş Verimliliği Faydaları",
+      "benefits": [
+        "Haftada 20+ saat tasarruf edin",
+        "Manuel veri girişini ortadan kaldırın",
+        "İnsan hatasını azaltın",
+        "Operasyonları kolayca ölçeklendirin"
+      ],
+      "ctaTitle": "Operasyonlarınızı kolaylaştırmaya hazır mısınız?",
+      "ctaButton": "İşinizi Otomatikleştirmeyi Başlatın"
+    }
+  },
+  "PlanPages": {
+    "starter": {
+      "heroTitle": "Starter Planı",
+      "heroSubtitle": "İnternete yeni başlayan küçük işletmeler için mükemmel.",
+      "idealFor": "Büyük genel giderler olmadan profesyonel bir dijital ayak izi oluşturmak isteyen yeni başlayanlar için idealdir.",
+      "includedTitle": "Neler Dahil",
+      "ctaTitle": "Yolculuğunuza bugün başlayın",
+      "ctaButton": "Starter ile Başlayın"
+    },
+    "growth": {
+      "heroTitle": "Growth Planı",
+      "heroSubtitle": "Otomasyona ihtiyaç duyan büyüyen şirketler için ideal.",
+      "idealFor": "Akıllı sohbet robotları ve müşteri adayı oluşturma sistemleri ile ölçeklenmeye hazır işletmeler için tasarlandı.",
+      "includedTitle": "Büyüme Odaklı Faydalar",
+      "ctaTitle": "Büyümenizi hızlandırmaya hazır mısınız?",
+      "ctaButton": "Growth ile Başlayın"
+    },
+    "business": {
+      "heroTitle": "Business System Planı",
+      "heroSubtitle": "Köklü işletmeler için eksiksiz dijital işletim sistemi.",
+      "idealFor": "Web sitesini, yapay zekayı ve kapsamlı otomasyonu entegre eden nihai kurumsal/iş ekosistemi.",
+      "includedTitle": "Tam Ekosistem Faydaları",
+      "ctaTitle": "Eksiksiz bir dijital sisteme yükseltin",
+      "ctaButton": "Business ile Başlayın"
+    }
+  },
+  "Navigation": {
+    "home": "Ana Sayfa",
+    "services": "Hizmetler",
+    "pricing": "Fiyatlandırma",
+    "about": "Hakkımızda",
+    "contact": "İletişim",
+    "admin": "Yönetici Paneli"
+  }
+}

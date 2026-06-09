@@ -1,7 +1,15 @@
+"use client";
+
 import { useTranslations } from 'next-intl';
+import { usePathname } from '@/i18n/routing';
 
 export function Footer() {
   const t = useTranslations('HomePage.hero'); // Using brand from hero
+  const pathname = usePathname();
+
+  if (pathname.includes('/admin')) {
+    return null;
+  }
 
   return (
     <footer className="bg-background border-t border-border/40 py-12">

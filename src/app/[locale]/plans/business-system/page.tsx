@@ -31,7 +31,7 @@ export default function BusinessPlanPage() {
             &quot;{tPlan('idealFor')}&quot;
           </p>
           <Link
-            href="#contact"
+            href="?service=business-system#contact"
             className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-500 px-8 py-4 text-base font-semibold text-white shadow-lg hover:bg-brand-400 transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500"
           >
             {tPlan('ctaButton')}

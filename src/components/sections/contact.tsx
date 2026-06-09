@@ -1,14 +1,30 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
+import { useSearchParams } from 'next/navigation';
 
-export function Contact() {
+function ContactForm() {
   const t = useTranslations('HomePage.contact');
+  const tPricing = useTranslations('HomePage.pricing');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
+
+  const searchParams = useSearchParams();
+  const serviceParam = searchParams.get('service');
+  
+  const [selectedService, setSelectedService] = useState('websites');
+
+  // Sync state if query parameter changes
+  useEffect(() => {
+    if (serviceParam) {
+      if (['websites', 'chatbots', 'automation', 'starter', 'growth', 'business-system', 'other'].includes(serviceParam)) {
+        setSelectedService(serviceParam);
+      }
+    }
+  }, [serviceParam]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -16,10 +32,15 @@ export function Contact() {
     setError('');
     
     const formData = new FormData(e.currentTarget);
+    const serviceType = formData.get('service');
+    const specifyService = formData.get('specifyService');
+    const countryCode = formData.get('countryCode');
+    const phoneNumber = formData.get('phone');
     const data = {
       name: formData.get('name'),
       email: formData.get('email'),
-      service_type: formData.get('service'),
+      phone: `${countryCode} ${phoneNumber}`,
+      service_type: serviceType === 'other' && specifyService ? `Other: ${specifyService}` : serviceType,
       budget: formData.get('budget'),
       details: formData.get('message'),
     };
@@ -104,26 +125,87 @@ export function Contact() {
                   <input type="email" id="email" name="email" required className="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 text-slate-800 dark:text-white focus:ring-2 focus:ring-brand-500 outline-none transition-shadow" placeholder={t('email')} />
                 </div>
               </div>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="service" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">{t('service')}</label>
-                  <select id="service" name="service" className="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 text-slate-800 dark:text-white focus:ring-2 focus:ring-brand-500 outline-none transition-shadow">
-                    <option value="websites">{t('services.websites')}</option>
-                    <option value="chatbots">{t('services.chatbots')}</option>
-                    <option value="automation">{t('services.automation')}</option>
-                    <option value="other">{t('services.other')}</option>
-                  </select>
+                  <label htmlFor="phone" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">{t('phone')}</label>
+                  <div className="flex rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 overflow-hidden focus-within:ring-2 focus-within:ring-brand-500 transition-shadow">
+                    <select
+                      name="countryCode"
+                      defaultValue="+90"
+                      className="px-3 py-3 border-r border-slate-300 dark:border-slate-700 bg-transparent text-slate-800 dark:text-white outline-none cursor-pointer text-sm font-semibold max-w-[100px] dark:bg-slate-950"
+                    >
+                      <option value="+90" className="bg-white dark:bg-slate-950">TR (+90)</option>
+                      <option value="+966" className="bg-white dark:bg-slate-950">SA (+966)</option>
+                      <option value="+962" className="bg-white dark:bg-slate-950">JO (+962)</option>
+                      <option value="+1" className="bg-white dark:bg-slate-950">US (+1)</option>
+                      <option value="+44" className="bg-white dark:bg-slate-950">UK (+44)</option>
+                      <option value="+971" className="bg-white dark:bg-slate-950">AE (+971)</option>
+                      <option value="+20" className="bg-white dark:bg-slate-950">EG (+20)</option>
+                      <option value="+974" className="bg-white dark:bg-slate-950">QA (+974)</option>
+                      <option value="+965" className="bg-white dark:bg-slate-950">KW (+965)</option>
+                      <option value="+973" className="bg-white dark:bg-slate-950">BH (+973)</option>
+                      <option value="+968" className="bg-white dark:bg-slate-950">OM (+968)</option>
+                    </select>
+                    <input 
+                      type="tel" 
+                      id="phone" 
+                      name="phone" 
+                      required 
+                      pattern="[0-9\s\-]{6,12}"
+                      className="w-full px-4 py-3 bg-transparent text-slate-800 dark:text-white outline-none border-none focus:ring-0" 
+                      placeholder={t('phonePlaceholder')} 
+                    />
+                  </div>
                 </div>
                 <div>
                   <label htmlFor="budget" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">{t('budget')}</label>
-                  <select id="budget" name="budget" className="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 text-slate-800 dark:text-white focus:ring-2 focus:ring-brand-500 outline-none transition-shadow">
+                  <select id="budget" name="budget" className="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 text-slate-800 dark:text-white focus:ring-2 focus:ring-brand-500 outline-none transition-shadow cursor-pointer">
                     <option value="under_1k">{t('budgets.under_1k')}</option>
                     <option value="1k_5k">{t('budgets.1k_5k')}</option>
                     <option value="5k_10k">{t('budgets.5k_10k')}</option>
                     <option value="10k_plus">{t('budgets.10k_plus')}</option>
                   </select>
                 </div>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-end">
+                <div className={selectedService === 'other' ? "col-span-1" : "col-span-1 md:col-span-2"}>
+                  <label htmlFor="service" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">{t('service')}</label>
+                  <select 
+                    id="service" 
+                    name="service" 
+                    value={selectedService}
+                    onChange={(e) => setSelectedService(e.target.value)}
+                    className="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 text-slate-800 dark:text-white focus:ring-2 focus:ring-brand-500 outline-none transition-shadow cursor-pointer"
+                  >
+                    <option value="websites">{t('services.websites')}</option>
+                    <option value="chatbots">{t('services.chatbots')}</option>
+                    <option value="automation">{t('services.automation')}</option>
+                    <option value="starter">{tPricing('starter.title')}</option>
+                    <option value="growth">{tPricing('growth.title')}</option>
+                    <option value="business-system">{tPricing('business.title')}</option>
+                    <option value="other">{t('services.other')}</option>
+                  </select>
+                </div>
+
+                {selectedService === 'other' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="col-span-1"
+                  >
+                    <label htmlFor="specifyService" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">{t('specifyService')}</label>
+                    <input 
+                      type="text" 
+                      id="specifyService" 
+                      name="specifyService" 
+                      required 
+                      className="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 text-slate-800 dark:text-white focus:ring-2 focus:ring-brand-500 outline-none transition-shadow" 
+                      placeholder={t('specifyServicePlaceholder')} 
+                    />
+                  </motion.div>
+                )}
               </div>
 
               <div>
@@ -145,5 +227,13 @@ export function Contact() {
         </motion.div>
       </div>
     </section>
+  );
+}
+
+export function Contact() {
+  return (
+    <Suspense fallback={null}>
+      <ContactForm />
+    </Suspense>
   );
 }

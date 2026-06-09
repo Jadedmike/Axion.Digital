@@ -22,5 +22,30 @@
     "message": "Budget: under_1k\n\nDetails: dfgd",
     "service_type": "websites",
     "created_at": "2026-06-04T14:18:54.024Z"
+  },
+  {
+    "id": "1781007406255",
+    "name": "Test User",
+    "email": "test@example.com",
+    "message": "Phone: +1 555 123 4567\n\nBudget: 5k_10k\n\nDetails: This is a test project details message.",
+    "service_type": "Other: Mobile Application",
+    "created_at": "2026-06-09T12:16:46.255Z"
+  },
+  {
+    "id": "1781007712922",
+    "name": "Split Phone User",
+    "email": "splitphone@example.com",
+    "message": "Phone: +966 500123456\n\nBudget: 5k_10k\n\nDetails: Test project request for split phone.",
+    "service_type": "websites",
+    "created_at": "2026-06-09T12:21:52.922Z"
+  },
+  {
+    "id": "1781008007231",
+    "name": "Full Test",
+    "email": "full@example.com",
+    "message": "Phone: +962 790000000\n\nBudget: under_1k\n\nDetails: Full testing validation",
+    "service_type": "Other: CRM Integration",
+    "created_at": "2026-06-09T12:26:47.231Z",
+    "status": "new"
   }
 ]

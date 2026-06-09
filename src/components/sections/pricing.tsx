@@ -17,6 +17,7 @@ export function Pricing() {
       features: t.raw('starter.features') as string[],
       cta: t('starter.cta'),
       popular: false,
+      serviceType: 'starter',
     },
     {
       id: 'growth',
@@ -26,6 +27,7 @@ export function Pricing() {
       features: t.raw('growth.features') as string[],
       cta: t('growth.cta'),
       popular: true,
+      serviceType: 'growth',
     },
     {
       id: 'business-system',
@@ -35,6 +37,7 @@ export function Pricing() {
       features: t.raw('business.features') as string[],
       cta: t('business.cta'),
       popular: false,
+      serviceType: 'business-system',
     }
   ];
 
@@ -69,10 +72,10 @@ export function Pricing() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 + 0.2 }}
-              className={`relative flex flex-col rounded-3xl p-8 shadow-xl ring-1 ${
+              className={`relative flex flex-col rounded-3xl p-8 shadow-xl ring-1 transition-all duration-300 ease-out hover:z-20 ${
                 plan.popular 
-                  ? 'bg-slate-800 dark:bg-white ring-slate-800 dark:ring-white scale-105 z-10' 
-                  : 'bg-white dark:bg-slate-900 ring-slate-200 dark:ring-slate-800'
+                  ? 'bg-slate-800 dark:bg-white ring-slate-800 dark:ring-white scale-105 z-10 hover:scale-[1.08] hover:shadow-2xl hover:shadow-slate-950/20 dark:hover:shadow-brand-500/15 dark:hover:ring-white/95' 
+                  : 'bg-white dark:bg-slate-900 ring-slate-200 dark:ring-slate-800 hover:scale-[1.03] hover:shadow-2xl dark:hover:shadow-brand-500/10 hover:ring-brand-500/30 dark:hover:ring-brand-500/30'
               }`}
             >
               {plan.popular && (
@@ -106,7 +109,7 @@ export function Pricing() {
                 ))}
               </ul>
               <Link
-                href={`/plans/${plan.id}`}
+                href={`/plans/${plan.id}?service=${plan.serviceType}`}
                 className={`mt-8 block rounded-full px-3.5 py-3 text-center text-sm font-semibold transition-colors ${
                   plan.popular
                     ? 'bg-brand-500 text-white hover:bg-brand-400 dark:bg-brand-600 dark:hover:bg-brand-500 shadow-sm'
